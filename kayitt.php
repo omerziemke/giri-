@@ -43,7 +43,7 @@
             <input type="text" id="sifre2" name="sifre2" placeholder="Sifrenizi Tekrar Giriniz.." required /><br>
 
             <button type="submit" onclick="kontrol();">
-                Kaydet
+                Kayıt Ol
             </button>
         </form>
     </div>
@@ -114,6 +114,7 @@
             }
             var yas = yil - yil2;
             alert(yas + " yaşındasınız");
+             
         }
 
     </script>
