@@ -35,19 +35,12 @@
            
     
     <div class="form">
-        <form action="" method="post">
         
-            <input id="email" type="email" name ="email"  placeholder="E-mailinizi Giriniz"><br>
-             <input id="sifre" type="text" name ="sifre" placeholder="Sifrenizi Giriniz..."><br>
-            <input type="submit" class="btn" value="Giriş" onclick="control();"><br>
-            <a class="link" href="kayitt.php" target="_blank">Kayıt Ol</a>
-            </form>
             <?php 
-
+           if($_POST){
      
          $email=$_POST["email"];
          $sifre=$_POST["sifre"];
-
          if($email==""|| $sifre==""){
             echo "Lütfen Boş Alan Bırakmayınız";
          }else{
@@ -61,7 +54,8 @@
                 $par=mysql_fetch_array($kontrol);
                 $gsifre=$par["sifre"];
                 if ($gsifre==$sifre) {
-                     header ("Location:index.php");
+            setcookie("email","$email");
+             header ("Location:index.php");
                 }else{
                     echo "Sifreniz Yanlış...";
                 }
@@ -70,7 +64,15 @@
             }
          }
 
-
+  }else{
+    echo'<form action="" method="post">
+        
+            <input id="email" type="email" name ="email"  placeholder="E-mailinizi Giriniz"><br>
+             <input id="sifre" type="password" name ="sifre" placeholder="Sifrenizi Giriniz..."><br>
+            <input type="submit" class="btn" value="Giriş" onclick="control();"><br>
+            <a class="link" href="kayitt.php">Kayıt Ol</a>
+            </form>';
+  }
            
 
 

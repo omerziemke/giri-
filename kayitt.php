@@ -47,7 +47,7 @@
             </button>
         </form>
     </div>
-
+        
     <script>
         function kontrol() {
             var tc = document.getElementById("tc").value;
@@ -58,8 +58,8 @@
             var soyad = document.getElementById("soyad").value;
             var tel = document.getElementById("tel").value;
             var cinsiyet = document.getElementsByName("cinsiyet").value;
-            alert(""+cinsiyet);
             var boyut = email.length;
+
             var kontrol = 0;
             var son = email.substring((boyut - 4), boyut);
             if (email == email2) {
@@ -108,10 +108,7 @@
                 alert("E-mail adreslerini kontrol ediniz");
                 return;
             }
-            if (email == email2) {
-
-
-            }
+             header ("Location:login.php");
             var yas = yil - yil2;
             alert(yas + " yaşındasınız");
              
